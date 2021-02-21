@@ -63,6 +63,7 @@ function App() {
         </Route>
         <Route path="/">
           <Home />
+          <Characters userIdToken={userIdToken} />
         </Route>
       </Switch>
       <Footer />
