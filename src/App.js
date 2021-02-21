@@ -59,7 +59,7 @@ function App() {
           <Signup setUser={setUser} setUserId={setUserId} />
         </Route>
         <Route path="/favorites">
-          <Favorites />
+          <Favorites userIdToken={userIdToken} />
         </Route>
         <Route path="/">
           <Home />

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Character from "../components/Character";
 import Cookies from "js-cookie";
 
-const Favorites = () => {
+const Favorites = ({ userIdToken }) => {
   //states
   // const [favoriteCharacters, setfavoriteCharacters] = useState(
   //   JSON.parse(Cookies.get("favoriteCharacters"))
@@ -19,7 +19,7 @@ const Favorites = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://the-marvel.herokuapp.com/characters/favorites"
+        `https://the-marvel.herokuapp.com/characters/favorites?user=${userIdToken}`
       );
       if (response.data) {
         setFavoriteCharacters(response.data);
